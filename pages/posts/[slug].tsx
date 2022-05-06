@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 import Container from '@/components/container'
-import Header from '@/components/header'
 import Layout from '@/components/layout'
 import PostBody from '@/components/post/post-body'
 import PostHeader from '@/components/post/post-header'
@@ -18,7 +17,7 @@ type Props = {
 	preview?: boolean
 }
 
-const Post = ({ post, preview }: Props) => {
+const Post = ({ post, preview = true }: Props) => {
 	const router = useRouter()
 	if (!router.isFallback && !post?.slug) {
 		return <ErrorPage statusCode={404} />
@@ -26,12 +25,11 @@ const Post = ({ post, preview }: Props) => {
 	return (
 		<Layout preview={preview}>
 			<Container>
-				<Header />
 				{router.isFallback ? (
 					<PostTitle>Loading…</PostTitle>
 				) : (
 					<>
-						<article className='mb-32'>
+						<article className='mb-32 '>
 							<Head>
 								<title>{post.title}</title>
 							</Head>

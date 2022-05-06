@@ -11,10 +11,12 @@ type Props = {
 
 const PostPreview = ({ title, date, excerpt, slug }: Props) => {
 	return (
-		<div>
+		<div className='col-span-2'>
 			<h3 className='mb-3 text-3xl leading-snug'>
 				<Link as={`/posts/${slug}`} href='/posts/[slug]'>
-					<a className='text-[#d23669] hover:underline'>{title}</a>
+					<a className='font-extrabold text-[#d23669]  hover:underline'>
+						{title}
+					</a>
 				</Link>
 			</h3>
 			<div className='mb-4 text-lg'>

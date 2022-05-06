@@ -12,7 +12,7 @@ type Props = {
 const HeroPost = ({ title, date, excerpt, slug }: Props) => {
 	return (
 		<section>
-			<div className='mb-20 md:mb-28 md:grid md:grid-cols-2 md:gap-x-16 lg:gap-x-8'>
+			<div className='mb-20 w-3/6 md:mb-28 md:grid md:gap-x-16 lg:gap-x-8'>
 				<div>
 					<h3 className='mb-4 text-4xl leading-tight lg:text-5xl'>
 						<Link as={`/posts/${slug}`} href='/posts/[slug]'>
